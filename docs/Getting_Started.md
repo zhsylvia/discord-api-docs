@@ -20,8 +20,6 @@ In this guide, we’ll be building a Discord app that lets server members play a
 
 And here's what the finished app will look like:
 
-![Demo of example app](getting-started-demo.gif)
-
 To make the user flow a bit more explicit:
 1. User 1 initiates a new game and picks their object using the app’s `/challenge` slash command
 2. A message is sent to channel with a button inviting others to accept the challenge
@@ -33,8 +31,6 @@ To make the user flow a bit more explicit:
 
 The first thing we’ll need to do is create an app. Navigate to [the developer dashboard](https://discord.com/developers/applications), then click **New Application** in the upper right corner.
 
-![App creation modal](app-create-modal.png)
-
 Enter a name for your app, then click **Create**.
 
 Once you create an app, you'll land on the **General Overview** page of the app's settings. Here you can view and configure basic information about the app, like its description and icon. You’ll also see an **Application ID** and **Interactions Endpoint URL**, which we’ll use a bit later in the guide.
@@ -44,8 +40,6 @@ Once you create an app, you'll land on the **General Overview** page of the app'
 Next we'll add a bot user to your app, which allows it to appear in Discord similar to other members. On the left hand sidebar click **Bot**, then the **Add Bot** button.
 
 Once you create a bot, you’ll have an option to update its icon and username. Under that, there’s a **Token** section with a **Reset Token** button.
-
-![Bot tab in app settings](app-add-bot.png)
 
 Bot tokens are used to authorize API requests and carry all of your bot user’s permissions, making them *highly sensitive*. Make sure to *never* share your token or check it into any kind of version control.
 
@@ -66,8 +60,6 @@ For now, we’ll just add two scopes:
 - `bot` is to enable your bot user. After you click bot, you can also add different user permissions to the bot. For now, just check **Send Messages**.
 
 See a list of all [OAuth2 scopes](#DOCS_TOPICS_OAUTH2/shared-resources-oauth2-scopes), or read more on [user permissions](#DOCS_TOPICS_PERMISSIONS) in the documentation.
-
-![URL generator screenshot](url-generator.png)
 
 Once you add scopes, you should see a URL that you can copy to install your app.
 
@@ -95,8 +87,6 @@ This guide uses Glitch, which allows you to quickly clone and develop an app fro
 To start, **[remix (or clone) the Glitch project 🎏](https://glitch.com/edit/#!/remix/getting-started-discord)**
 
 When you remix the project, you'll see a new Glitch project with a unique name similar to this:
-
-![Glitch project overview](glitch-project.png)
 
 #### Project structure
 
@@ -157,16 +147,12 @@ Glitch projects have a public URL exposed by default. Copy your project's URL by
 
 In the following example, the link would be `https://vast-thorn-plant.glitch.me`:
 
-![Glitch share modal](glitch-project-share.png)
-
 > info
 > If you're developing locally, there are instructions for tunneling requests to your local environment [on the Github README](https://github.com/discord/discord-example-app#running-app-locally).
 
 With that link copied, go to your app settings from [the developer portal](https://discord.com/developers/applications).
 
 On your app’s **General Information** page, there’s an **Interactive Endpoint URL** option, where you can paste your app’s URL and append `/interactions` to it, which is where the Express app is configured to listen for requests.
-
-![Interactions endpoint URL in app settings](interactions-url.png)
 
 Click **Save Changes** and ensure your endpoint is successfully verified.
 
